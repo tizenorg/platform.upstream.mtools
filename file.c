@@ -620,7 +620,7 @@ static Stream_t *_internalFileOpen(Stream_t *Dir, unsigned int first,
 		Pattern.loopDetectRel = 0;
 		Pattern.loopDetectAbs = first;
 		if(!hash_lookup(filehash, (T_HashTableEl) &Pattern,
-				(T_HashTableEl **)&File, 0)){
+				(T_HashTableEl **)(void *)&File, 0)){
 			File->refs++;
 			This->refs--;
 			return (Stream_t *) File;
