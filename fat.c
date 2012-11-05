@@ -719,7 +719,7 @@ static int old_fat_read(Fs_t *This, union bootsector *boot,
 	if(check_media_type(This,boot, tot_sectors))
 		return -1;
 
-	if(This->num_clus >= FAT12) {
+	if(This->num_clus >= FAT12 || This->fat_bits == 16) {
 		set_fat16(This);
 		/* third FAT byte must be 0xff */
 		if(!mtools_skip_check && readByte(This, 3) != 0xff)
