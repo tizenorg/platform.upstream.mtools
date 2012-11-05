@@ -334,11 +334,15 @@ typedef unsigned int uid_t;
 #endif
 
 #ifdef HAVE_NETINET_IN_H
+#ifndef DONT_NEED_IN
 #include <netinet/in.h>
+#endif
 #endif
 
 #ifdef HAVE_ARPA_INET_H
+#ifndef DONT_NEED_IN
 #include <arpa/inet.h>
+#endif
 #endif
 
 #ifdef HAVE_NETDB_H
