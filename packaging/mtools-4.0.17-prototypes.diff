@@ -1,0 +1,63 @@
+Index: mformat.c
+===================================================================
+--- mformat.c.orig
++++ mformat.c
+@@ -19,6 +19,7 @@
+  */
+ 
+ #define DONT_NEED_WAIT
++#define DONT_NEED_IN
+ 
+ #include "sysincludes.h"
+ #include "msdos.h"
+@@ -48,7 +49,7 @@
+ 
+ #define _LINUX_STRING_H_
+ #define kdev_t int
+-#include "linux/fs.h"
++#include "sys/mount.h"
+ #undef _LINUX_STRING_H_
+ 
+ #endif
+Index: mpartition.c
+===================================================================
+--- mpartition.c.orig
++++ mpartition.c
+@@ -17,6 +17,7 @@
+  * mformat.c
+  */
+ #define DONT_NEED_WAIT
++#define DONT_NEED_IN
+ 
+ #include "sysincludes.h"
+ #include "msdos.h"
+@@ -35,7 +36,7 @@
+ 
+ #define _LINUX_STRING_H_
+ #define kdev_t int
+-#include "linux/fs.h"
++#include "sys/mount.h"
+ #undef _LINUX_STRING_H_
+ 
+ #endif
+Index: sysincludes.h
+===================================================================
+--- sysincludes.h.orig
++++ sysincludes.h
+@@ -331,12 +331,16 @@ typedef unsigned int uid_t;
+ #endif
+ 
+ #ifdef HAVE_NETINET_IN_H
++#ifndef DONT_NEED_IN
+ #include <netinet/in.h>
+ #endif
++#endif
+ 
+ #ifdef HAVE_ARPA_INET_H
++#ifndef DONT_NEED_IN
+ #include <arpa/inet.h>
+ #endif
++#endif
+ 
+ #ifdef HAVE_NETDB_H
+ #include <netdb.h>
