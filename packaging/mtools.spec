@@ -6,11 +6,6 @@ Summary:        Access Files on an MS-DOS File System
 Url:            http://mtools.linux.lu/
 Group:          System/Filesystems
 Source:         %{name}-%{version}.tar.bz2
-Patch0:         %{name}-%{version}-conf.diff
-Patch1:         %{name}-%{version}-autoconf.diff
-Patch3:         %{name}-%{version}-aliasing.diff
-Patch4:         %{name}-%{version}-fat-bits.diff
-Patch5:         %{name}-%{version}-prototypes.diff
 BuildRequires:  autoconf
 BuildRequires:  makeinfo
 
@@ -36,11 +31,6 @@ XDF support for OS/2 is also provided.
 
 %prep
 %setup -q
-%patch0
-%patch1
-%patch3
-%patch4
-%patch5
 
 %build
 autoconf --force
