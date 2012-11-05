@@ -1,6 +1,4 @@
 Name:           mtools
-#BuildRequires:  xorg-x11
-#BuildRequires:  xorg-x11-devel
 Version:        4.0.17
 Release:        0
 License:        GPL-3.0+
@@ -14,9 +12,7 @@ Patch3:         %{name}-%{version}-aliasing.diff
 Patch4:         %{name}-%{version}-fat-bits.diff
 Patch5:         %{name}-%{version}-prototypes.diff
 BuildRequires:  autoconf
-#BuildRequires:  libpng
 BuildRequires:  makeinfo
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 Mtools allows uncomplicated access to an MS-DOS file system on disk
