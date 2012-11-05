@@ -17,6 +17,7 @@
  * mformat.c
  */
 #define DONT_NEED_WAIT
+#define DONT_NEED_IN
 
 #include "sysincludes.h"
 #include "msdos.h"
@@ -35,7 +36,7 @@
 
 #define _LINUX_STRING_H_
 #define kdev_t int
-#include "linux/fs.h"
+#include "sys/mount.h"
 #undef _LINUX_STRING_H_
 
 #endif
