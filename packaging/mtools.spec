@@ -50,6 +50,7 @@ rm -rf %{buildroot}%{_bindir}/f*
 %docs_package
 
 %files
+%license COPYING
 %defattr(-,root,root)
 %config %{_sysconfdir}/mtools.conf
 %{_bindir}/*
