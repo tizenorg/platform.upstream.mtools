@@ -6,6 +6,7 @@ Summary:        Access Files on an MS-DOS File System
 Url:            http://mtools.linux.lu/
 Group:          System/Filesystems
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	mtools.manifest
 BuildRequires:  autoconf
 BuildRequires:  makeinfo
 
@@ -31,6 +32,7 @@ XDF support for OS/2 is also provided.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 autoconf --force
@@ -50,6 +52,7 @@ rm -rf %{buildroot}%{_bindir}/f*
 %docs_package
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root)
 %config %{_sysconfdir}/mtools.conf
