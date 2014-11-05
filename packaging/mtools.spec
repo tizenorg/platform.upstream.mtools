@@ -1,12 +1,12 @@
 Name:           mtools
-Version:        4.0.17
+Version:        4.0.18
 Release:        0
 License:        GPL-3.0+
 Summary:        Access Files on an MS-DOS File System
 Url:            http://mtools.linux.lu/
-Group:          System/Filesystems
+Group:          System/File Systems
 Source:         %{name}-%{version}.tar.bz2
-Source1001: 	mtools.manifest
+Source1001:     mtools.manifest
 BuildRequires:  autoconf
 BuildRequires:  makeinfo
 
@@ -20,7 +20,7 @@ XDF support for OS/2 is also provided.
 %package doc
 License:        GPL-3.0+ and GFDL-1.3
 Summary:        Access Files on an MS-DOS File System
-Group:          System/Filesystems
+Group:          System/File Systems
 Requires:       %{name} = %{version}
 
 %description doc
@@ -57,6 +57,3 @@ rm -rf %{buildroot}%{_bindir}/f*
 %defattr(-,root,root)
 %config %{_sysconfdir}/mtools.conf
 %{_bindir}/*
-
-
-%changelog
